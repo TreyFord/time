@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img">
+  <title>time.asktrey.com logo B: GMT</title>
+  <defs>
+    <g id="plane">
+      <path d="M100 40C106 40 108 50 108 62L108 138L100 162L92 138L92 62C92 50 94 40 100 40Z"/>
+      <path d="M92 86L38 106L38 116L92 108L108 108L162 116L162 106L108 86Z"/>
+      <path d="M94 140L68 150L68 157L94 153L106 153L132 157L132 150L106 140Z"/>
+    </g>
+  </defs>
+  <rect width="200" height="200" rx="28" fill="#0b0d0f"/>
+  <path d="M100 20A80 80 0 0 1 100 180" fill="none" stroke="#4da3ff" stroke-width="12"/>
+  <path d="M100 180A80 80 0 0 1 100 20" fill="none" stroke="#16315a" stroke-width="12"/>
+  <circle cx="100" cy="100" r="66" fill="none" stroke="#3a4a6a" stroke-width="8" stroke-dasharray="2 15.28"/>
+  <circle cx="100" cy="100" r="58" fill="#10151c" stroke="#4da3ff" stroke-width="1.5"/>
+  <g transform="rotate(50 100 100)">
+    <line x1="100" y1="100" x2="100" y2="62" stroke="#bfe0ff" stroke-width="4" stroke-linecap="round"/>
+    <g fill="#bfe0ff" transform="translate(100 44) scale(0.3) translate(-100 -100)"><use href="#plane"/></g>
+  </g>
+  <circle cx="100" cy="100" r="5" fill="#e2e8f0"/>
+</svg>

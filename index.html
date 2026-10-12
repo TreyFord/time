@@ -3,15 +3,16 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>Time Planner — codingo/time</title>
+<title>Time Planner — time.asktrey.com</title>
 <meta name="description" content="Compare times across multiple cities instantly. Shows working hours, public holidays, and weekend flags. Shareable links.">
 <meta name="theme-color" content="#0b0d0f">
-<meta property="og:title" content="Time Planner — codingo/time">
+<link rel="icon" type="image/svg+xml" href="logo-a.svg">
+<meta property="og:title" content="Time Planner — time.asktrey.com">
 <meta property="og:description" content="Compare times across cities instantly. Working hours, public holidays, shareable links.">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://codingo.com/time">
+<meta property="og:url" content="https://time.asktrey.com">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:site" content="@codingo_">
+<meta name="twitter:site" content="@treyford">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
@@ -25,8 +26,8 @@
   --text: #e2e8f0;
   --text2: #7080a0;
   --text3: #3a4560;
-  --accent: #3ddc84;
-  --accent-dim: rgba(61,220,132,0.10);
+  --accent: #4da3ff;
+  --accent-dim: rgba(77,163,255,0.10);
   --green: #3ddc84;
   --amber: #f0a500;
   --orange: #ea580c;
@@ -190,12 +191,12 @@ button{font-family:var(--sans);cursor:pointer}
 .btn-ctrl:hover{background:var(--surface2);border-color:rgba(255,255,255,0.2)}
 .btn-sm{padding:6px 9px;color:var(--text2);font-size:11px}
 .btn-now{font-family:var(--sans);font-size:12px;font-weight:500;min-width:60px}
-.btn-now.live{color:var(--green);border-color:rgba(61,220,132,0.4);background:rgba(61,220,132,0.06)}
-.btn-now.live::before{content:'';display:inline-block;width:6px;height:6px;background:var(--green);border-radius:50%;margin-right:6px;animation:pulse 1.4s ease-in-out infinite}
+.btn-now.live{color:var(--accent);border-color:rgba(77,163,255,0.4);background:rgba(77,163,255,0.06)}
+.btn-now.live::before{content:'';display:inline-block;width:6px;height:6px;background:var(--accent);border-radius:50%;margin-right:6px;animation:pulse 1.4s ease-in-out infinite}
 @keyframes pulse{0%,100%{opacity:1}50%{opacity:0.25}}
 .copy-btns{display:flex;gap:6px;margin-left:auto}
 .btn-copy,.btn-copy-text{font-family:var(--sans);font-size:12px;font-weight:500}
-.btn-copy.done,.btn-copy-text.done{color:var(--green);border-color:rgba(61,220,132,0.4);background:rgba(61,220,132,0.06)}
+.btn-copy.done,.btn-copy-text.done{color:var(--accent);border-color:rgba(77,163,255,0.4);background:rgba(77,163,255,0.06)}
 
 .legend{display:flex;gap:14px;font-size:10.5px;color:#8090a8;margin-bottom:20px;flex-wrap:wrap;align-items:center}
 .legend.gone{display:none}
@@ -358,11 +359,8 @@ button{font-family:var(--sans);cursor:pointer}
 
   <header class="hdr">
     <div class="hdr-brand">
-      <a href="https://codingo.com" target="_blank" rel="noopener" class="hdr-logo" title="codingo.com">
-        <video id="video-logo" loop="true" preload="true" autoplay muted playsinline>
-          <source src="https://codingo.com/video/codingo-logo.webm" type="video/webm">
-          <img src="https://codingo.com/images/codingo-logo.png" alt="codingo logo"><br>
-        </video>
+      <a href="https://asktrey.com" target="_blank" rel="noopener" class="hdr-logo" title="asktrey.com">
+        <img src="logo-a.svg" width="44" height="44" alt="time.asktrey.com logo">
       </a>
       <h1>Time Planner</h1>
     </div>
@@ -383,20 +381,17 @@ button{font-family:var(--sans);cursor:pointer}
   </div>
 
   <div class="chips-wrap" id="chips-wrap">
+    <button class="chip" data-tz="America/Chicago" data-n="Austin" data-cc="US"><span class="chip-flag">🇺🇸</span>Austin</button>
+    <button class="chip" data-tz="America/New_York" data-n="New York" data-cc="US"><span class="chip-flag">🇺🇸</span>NYC</button>
+    <button class="chip" data-tz="America/Los_Angeles" data-n="San Francisco" data-cc="US"><span class="chip-flag">🇺🇸</span>SFO</button>
+    <button class="chip" data-tz="Europe/London" data-n="London" data-cc="GB"><span class="chip-flag">🇬🇧</span>London</button>
     <button class="chip" data-tz="Australia/Brisbane" data-n="Gold Coast" data-cc="AU"><span class="chip-flag">🇦🇺</span>Gold Coast</button>
     <button class="chip" data-tz="Australia/Sydney" data-n="Sydney" data-cc="AU"><span class="chip-flag">🇦🇺</span>Sydney</button>
     <button class="chip" data-tz="Asia/Singapore" data-n="Singapore" data-cc="SG"><span class="chip-flag">🇸🇬</span>Singapore</button>
-    <button class="chip" data-tz="Europe/London" data-n="London" data-cc="GB"><span class="chip-flag">🇬🇧</span>London</button>
-    <button class="chip" data-tz="America/New_York" data-n="New York" data-cc="US"><span class="chip-flag">🇺🇸</span>New York</button>
-    <button class="chip" data-tz="America/Los_Angeles" data-n="Los Angeles" data-cc="US"><span class="chip-flag">🇺🇸</span>Los Angeles</button>
-    <button class="chip" data-tz="America/Los_Angeles" data-n="San Francisco" data-cc="US"><span class="chip-flag">🇺🇸</span>San Francisco</button>
-    <button class="chip" data-tz="America/Chicago" data-n="Austin" data-cc="US"><span class="chip-flag">🇺🇸</span>Austin</button>
-    <button class="chip" data-tz="America/New_York" data-n="Manchester" data-cc="US"><span class="chip-flag">🇺🇸</span>New Hampshire</button>
     <button class="chip" data-tz="Asia/Tokyo" data-n="Tokyo" data-cc="JP"><span class="chip-flag">🇯🇵</span>Tokyo</button>
     <button class="chip" data-tz="Asia/Dubai" data-n="Dubai" data-cc="AE"><span class="chip-flag">🇦🇪</span>Dubai</button>
     <button class="chip" data-tz="Europe/Berlin" data-n="Berlin" data-cc="DE"><span class="chip-flag">🇩🇪</span>Berlin</button>
     <button class="chip" data-tz="America/Toronto" data-n="Toronto" data-cc="CA"><span class="chip-flag">🇨🇦</span>Toronto</button>
-    <button class="chip" data-tz="America/Chicago" data-n="Chicago" data-cc="US"><span class="chip-flag">🇺🇸</span>Chicago</button>
     <button class="chip" data-tz="Pacific/Auckland" data-n="Auckland" data-cc="NZ"><span class="chip-flag">🇳🇿</span>Auckland</button>
   </div>
 
@@ -468,28 +463,13 @@ button{font-family:var(--sans);cursor:pointer}
 </div>
 
 <footer class="site-footer" role="contentinfo">
-  <a href="https://codingo.com" target="_blank" rel="noopener" class="footer-brand">codingo.com</a>
+  <a href="https://asktrey.com" target="_blank" rel="noopener" class="footer-brand">asktrey.com</a>
   <div class="footer-socials">
-    <a href="https://twitter.com/codingo_" target="_blank" rel="noopener" class="footer-social" title="Twitter / X @codingo_">
+    <a href="https://twitter.com/treyford" target="_blank" rel="noopener" class="footer-social" title="Twitter / X @treyford">
       <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-label="Twitter"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
     </a>
-    <a href="https://youtube.com/codingo" target="_blank" rel="noopener" class="footer-social" title="YouTube">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-label="YouTube"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
-    </a>
-    <a href="https://www.twitch.tv/codingo_" target="_blank" rel="noopener" class="footer-social" title="Twitch">
-      <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-label="Twitch"><path d="M11.571 4.714h1.715v5.143H11.57zm4.715 0H18v5.143h-1.714zM6 0L1.714 4.286v15.428h5.143V24l4.286-4.286h3.428L22.286 12V0zm14.571 11.143l-3.428 3.428h-3.429l-3 3v-3H6.857V1.714h13.714z"/></svg>
-    </a>
-    <a href="https://www.facebook.com/codingo" target="_blank" rel="noopener" class="footer-social" title="Facebook">
-      <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-label="Facebook"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-    </a>
-    <a href="https://bsky.app/profile/codingo.com" target="_blank" rel="noopener" class="footer-social" title="Bluesky">
-      <svg width="16" height="14" viewBox="0 0 600 530" fill="currentColor" aria-label="Bluesky"><path d="M300 443c-45-57-188-155-260-171 16 101 96 173 198 173 22 0 43-1 62-2zm0 0c45-57 188-155 260-171-16 101-96 173-198 173-22 0-43-1-62-2zm0-42C283 355 168 241 114 68c-10-32-18-64 0-68s31 20 51 56c52 95 111 176 135 210zm0 0c17-46 132-160 186-333 10-32 18-64 0-68s-31 20-51 56C384 204 325 285 300 401z"/></svg>
-    </a>
-    <a href="https://www.linkedin.com/in/skeltonm/" target="_blank" rel="noopener" class="footer-social" title="LinkedIn">
+    <a href="https://www.linkedin.com/in/treyford" target="_blank" rel="noopener" class="footer-social" title="LinkedIn">
       <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-label="LinkedIn"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-    </a>
-    <a href="https://github.com/codingo" target="_blank" rel="noopener" class="footer-social" title="GitHub">
-      <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-label="GitHub"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
     </a>
   </div>
 </footer>
@@ -819,7 +799,7 @@ function relOffset(refTz,thisTz,ms){
   return`${s}${h}${m?':'+String(m).padStart(2,'0'):''}h ${diff>0?'ahead':'behind'}`;
 }
 function fmtShort(tz,ms){
-  return new Intl.DateTimeFormat('en-AU',{timeZone:tz,weekday:'short',day:'numeric',month:'short',hour:'numeric',minute:'2-digit',hour12:true}).format(new Date(ms));
+  return new Intl.DateTimeFormat('en-US',{timeZone:tz,weekday:'short',day:'numeric',month:'short',hour:'numeric',minute:'2-digit',hour12:true}).format(new Date(ms));
 }
 function localDateStr(tz,ms){const p=localParts(tz,ms);return`${p.year}-${String(p.month).padStart(2,'0')}-${String(p.day).padStart(2,'0')}`}
 function localTimeStr(tz,ms){const p=localParts(tz,ms);return`${String(p.hour).padStart(2,'0')}:${String(p.minute).padStart(2,'0')}`}
@@ -926,8 +906,8 @@ function renderOverlap(){
   const durStr=durH>0?(durM>0?`${durH}h ${durM}m`:`${durH}h`):`${durM}m`;
 
   // Format start & end times
-  const fmtT=ms=>new Intl.DateTimeFormat('en-AU',{timeZone:refTz,hour:'numeric',minute:'2-digit',hour12:true}).format(new Date(ms));
-  const fmtD=ms=>new Intl.DateTimeFormat('en-AU',{timeZone:refTz,weekday:'short',day:'numeric',month:'short'}).format(new Date(ms));
+  const fmtT=ms=>new Intl.DateTimeFormat('en-US',{timeZone:refTz,hour:'numeric',minute:'2-digit',hour12:true}).format(new Date(ms));
+  const fmtD=ms=>new Intl.DateTimeFormat('en-US',{timeZone:refTz,weekday:'short',day:'numeric',month:'short'}).format(new Date(ms));
 
   // Only show "Now" when in live mode AND we're inside this window
   const isNow=S.isLive&&w.t<=S.refMs&&S.refMs<w.tEnd;
@@ -1242,8 +1222,8 @@ async function doCopyText(){
     const durH=Math.floor(durMs/3600000),durM=Math.floor((durMs%3600000)/60000);
     const durStr=durH>0?(durM>0?`${durH}h ${durM}m`:`${durH}h`):`${durM}m`;
     const isNow=S.isLive&&firstWin.t<=S.refMs&&S.refMs<firstWin.tEnd;
-    const fmtT=ms=>new Intl.DateTimeFormat('en-AU',{timeZone:refTz,hour:'numeric',minute:'2-digit',hour12:true}).format(new Date(ms));
-    const fmtD=ms=>new Intl.DateTimeFormat('en-AU',{timeZone:refTz,weekday:'short',day:'numeric',month:'short'}).format(new Date(ms));
+    const fmtT=ms=>new Intl.DateTimeFormat('en-US',{timeZone:refTz,hour:'numeric',minute:'2-digit',hour12:true}).format(new Date(ms));
+    const fmtD=ms=>new Intl.DateTimeFormat('en-US',{timeZone:refTz,weekday:'short',day:'numeric',month:'short'}).format(new Date(ms));
     lines.push(``);
     lines.push(isNow
       ?`↔ Best overlap: Now (window closes ${fmtT(firstWin.tEnd)} ${fmtD(firstWin.tEnd)})`
@@ -1463,7 +1443,7 @@ function render(){
     const suffix=S.zones.length>3?` +${S.zones.length-3}`:'';
     document.title=`${names}${suffix} — Time Planner`;
   } else {
-    document.title='Time Planner — codingo/time';
+    document.title='Time Planner — time.asktrey.com';
   }
   const g='gone';
   document.getElementById('empty').style.display=has?'none':'block';
@@ -1486,7 +1466,13 @@ function render(){
   prefetchAllHolidays();
 }
 
-loadURL();render();if(S.isLive)setLive(true);
+loadURL();
+// Fresh visit with no shared link: start with Austin (US Central, DST-aware via IANA zone)
+if(!S.zones.length&&!location.hash&&!location.search){
+  const home=DB.find(c=>c.n==='Austin'&&c.tz==='America/Chicago');
+  if(home)S.zones.push({...home,h0:DEF_H0,h1:DEF_H1});
+}
+render();if(S.isLive)setLive(true);
 </script>
 
 <script>

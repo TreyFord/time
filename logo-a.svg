@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img">
+  <title>time.asktrey.com logo A: Departure</title>
+  <defs>
+    <g id="plane">
+      <path d="M100 40C106 40 108 50 108 62L108 138L100 162L92 138L92 62C92 50 94 40 100 40Z"/>
+      <path d="M92 86L38 106L38 116L92 108L108 108L162 116L162 106L108 86Z"/>
+      <path d="M94 140L68 150L68 157L94 153L106 153L132 157L132 150L106 140Z"/>
+    </g>
+  </defs>
+  <rect width="200" height="200" rx="28" fill="#0b0d0f"/>
+  <circle cx="100" cy="100" r="84" fill="none" stroke="#3a4a6a" stroke-width="6" stroke-dasharray="2 20.99"/>
+  <circle cx="100" cy="100" r="76" fill="none" stroke="#4da3ff" stroke-width="2.5"/>
+  <g fill="#4da3ff" transform="translate(100 100) scale(0.72) rotate(40) translate(-100 -100)"><use href="#plane"/></g>
+  <circle cx="157" cy="43" r="6" fill="#bfe0ff"/>
+</svg>
